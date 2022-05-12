@@ -6,4 +6,8 @@ set -e
 # build
 npm run build
 
-git subtree push --prefix dist origin gh-pages
+rm -rf docs
+mv dist docs
+git add docs
+git commit -m "chore: deploy new gh pages"
+git push
